@@ -1,0 +1,50 @@
+.new-tweet {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+	font-size: 20px;
+	padding-bottom: .3rem;
+}
+
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  border: none;
+  border-bottom: 3px solid;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  resize: none;
+  height: 2rem;
+}
+
+form>div {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Bungee', cursive;
+}
+
+div>button {
+	color: #fff;
+	background: #4056a1;
+	border: none;
+	padding: 5px 15px;
+	border-radius: 3px;
+	height: 38px;
+	width:113px;
+	font-size:25px;
+}

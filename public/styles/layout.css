@@ -24,9 +24,13 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- .container {
-   width: 90%;
-   background-color: #545149;
-   height: 10000px;
-   margin: 0 auto;
- }
+.container {
+  width: 90%;
+  background-color: #f4f1ec;
+  /* height: 150vh; */
+  margin: 0 auto;
+  position: relative;
+  top: 520px;
+  display: flex;
+  justify-content: center;
+}
