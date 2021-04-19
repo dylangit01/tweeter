@@ -7,24 +7,29 @@
 	 display: flex;
 	 align-items: center;
 	 justify-content: space-between;
+	 position: relative;
+	 z-index: 100;
  }
 
  .newArrow {
+	 margin-top: 1rem;
 	 display: flex;
 	 flex-direction: column;
 	 text-align: center;
+	 margin-right: 1.5em;
  }
  .downAngle {
 	color:#EE3C20;
  }
 
 nav>span {
+	margin-top: 1rem;
+	font-size: 2rem;
 	margin-left:1.5em;
 }
 
 .newTwtF {
 	font-family: Arial, Helvetica, sans-serif;
-	margin-right: 1.5em;
 }
 
 .thinF {
