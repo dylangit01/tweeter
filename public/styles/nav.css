@@ -1,43 +1,41 @@
-
- nav {
-	 height: 120px;
-	 background: #4056A1;
-   font-family: 'Bungee', cursive;
-	 color: #fff;
-	 display: flex;
-	 align-items: center;
-	 justify-content: space-between;
-	 position: fixed;
-	 top:0;
-	 left:0;
-	 right: 0;
-	 z-index: 100;
- }
-
- nav>span {
-	margin-top: 1rem;
-	font-size: 2rem;
-	margin-left:1.5em;
-	color:aqua;
+nav {
+  height: 120px;
+  background: #4056a1;
+  font-family: 'Bungee', cursive;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
- .newArrow {
-	 margin-top: 1rem;
-	 display: flex;
-	 flex-direction: column;
-	 text-align: center;
-	 margin-right: 1.5em;
- }
+nav > span {
+  margin-top: 1rem;
+  font-size: 2rem;
+  margin-left: 1.5em;
+  color: aqua;
+}
 
- .downAngle {
-	color:#EE3C20;
- }
+.newArrow {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 1.5em;
+}
+
+.downAngle {
+  color: #ee3c20;
+}
 
 .newTwtF {
-	font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .thinF {
-	font-family: 'Encode Sans Semi Expanded', sans-serif;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
-
