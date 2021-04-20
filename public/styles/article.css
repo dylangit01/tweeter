@@ -1,0 +1,43 @@
+article.tweet {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 230px;
+	border: 3px solid;
+	margin-bottom: 2rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+article>header {
+	width: 98%;
+	height: 75%;
+	display: flex;
+	top:0px;
+	background-color: #f4f1ec;
+	background-image: none;
+	border-bottom: 3px solid;
+}
+
+article>footer {
+	width: 98%;
+	height: 25%;
+	display: flex;
+	justify-content: space-between;
+	padding:.5rem 1.3rem;
+}
+
+article>footer span:nth-child(1) {
+	font-size: 15px;
+	padding-top: 5px;
+}
+
+article>footer span:nth-child(2) {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 15px;
+}
+
+/* article.tweet p {
+	margin: 0;
+	padding: 0;
+} */

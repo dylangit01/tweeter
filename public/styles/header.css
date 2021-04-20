@@ -1,5 +1,5 @@
 header {
-  height: 400px;
+  height: 420px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,6 +7,6 @@ header {
   flex-direction: column;
   background-image: url('/images/diagmonds-light.png');
   background-color: #b8b5ff;
-  position: absolute;
+  position: relative;
   top: 120px;
 }

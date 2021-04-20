@@ -3,8 +3,7 @@ $(document).ready(function() {
 	
   const charCounter = function () {
 		const outputEl = $(this).parent().children().children()[1]
-		let inputWordsLength = this.value.length;
-		outputEl.innerText = 140 - inputWordsLength;
+		outputEl.innerText = 140 - this.value.length;
     outputEl.innerText < 0 ? outputEl.style.color = '#ff0000' : outputEl.style.color = '#545149';
   };
 
