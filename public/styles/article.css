@@ -32,9 +32,14 @@ article>header div {
 article>header div span:nth-child(1){
 	display: flex;
 	align-items: center;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
-.far {
+article>header div span:nth-child(2) {
+	color: #C9CEE3;
+}
+
+.fa-smile-beam {
 	margin-right: 1rem;
 }
 
@@ -62,7 +67,7 @@ article > footer span:nth-child(2) {
   grid-gap: 15px;
 }
 
-/* article.tweet p {
-	margin: 0;
-	padding: 0;
-} */
+.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
+color: #ef4f4f;
+}
+
