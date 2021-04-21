@@ -7,7 +7,7 @@
 $('document').ready(function() {
   
   const renderTweets = function (tweets) {
-    tweets.forEach((tweet) => {
+    tweets.reverse().forEach((tweet) => {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
     });
@@ -48,8 +48,8 @@ $('document').ready(function() {
   $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
     event.preventDefault();
-    const tweetInput = $('#tweet-text').val();
-    const maxInputChar = $('form output').text()
+    let tweetInput = $('#tweet-text').val();
+    let maxInputChar = $('form output').text()
     // console.log($('form output').text());
     if (tweetInput === '' || tweetInput === null) {
       alert('Tweet content cannot be empty, please try again')
@@ -58,13 +58,16 @@ $('document').ready(function() {
       alert('Tweet content should be less then 140 characters');
       return;
     }
-    console.log($(event.target).serialize());
+    // console.log($(event.target).serialize());
     $.ajax({
       type: 'POST',
       url: '/tweets',
       data: $(event.target).serialize(),
     }).then(() => {
       // console.log('Successfully loaded');
+      location.reload();
+      $('#tweets-container').empty()
+      loadTweets()
     });
   });
 
