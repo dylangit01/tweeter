@@ -9,3 +9,4 @@ $('document').ready(function () {
 
   textareaEl.on('keyup', charCounter);
 });
+
