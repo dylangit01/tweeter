@@ -29,16 +29,17 @@ const data = [
   },
 ];
 
-const renderTweets = function (tweets) {
-  tweets.forEach((tweet) => {
-    const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
-  });
-};
+$('document').ready(function () {
+  const renderTweets = function (tweets) {
+    tweets.forEach((tweet) => {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').append($tweet);
+    });
+  };
 
-const createTweetElement = function (data) {
-  const { user: { name, avatars, handle }, content: { text }, created_at, } = data;
-  return $(`
+  const createTweetElement = function (data) {
+    const { user: { name, avatars, handle }, content: { text }, created_at, } = data;
+    return $(`
 		<article class='tweet'>
 			<header>
 				<div class="faceName">
@@ -48,7 +49,7 @@ const createTweetElement = function (data) {
 				<p>${text}</p>
 			</header>
 			<footer>
-				<span class="timePassed" datetime="${created_at}"></span>
+				<span class="timePassed">${timeago.format(new Date(created_at))}</span>
 				<span>
 					<i class="fas fa-flag fa-xs"></i>
 					<i class="fas fa-retweet fa-xs"></i>
@@ -57,17 +58,27 @@ const createTweetElement = function (data) {
 			</footer>
 		</article>
 	`);
-};
+  };
 
-$('document').ready(function () {
   renderTweets(data);
 
-  const formSub = $('[action]')[0];
-  console.log(formSub);
-  $(formSub).submit((event) => {
+  // Below fn cannot use "this", otherwise use tradition function syntax.
+  $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
     event.preventDefault();
+    console.log($(event.target).serialize());
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(event.target).serialize(),
+    }).then(function () {
+      console.log('Successfully loaded');
+    });
   });
+
+
+
+
+
+  
 });
-
-
