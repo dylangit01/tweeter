@@ -16,8 +16,33 @@ const tweetData = {
   created_at: 1461116232227,
 };
 
+const createTweetElement = function (data) {
+  const {
+    user: { name, avatars, handle },
+    content: { text },
+    created_at,
+  } = data;
+  return $(`
+		<header>
+			<div class="faceName">
+				<span><img src="${avatars}" alt="userAvatar"/></i>${name}</span>
+				<span>${handle}</span>
+			</div>
+			<p>${text}</p>
+		</header>
+		<footer>
+      <span class="timePassed" datetime="${created_at}"></span>
+      <span>
+        <i class="fas fa-flag fa-xs"></i>
+        <i class="fas fa-retweet fa-xs"></i>
+        <i class="fas fa-heart fa-xs"></i>
+      </span>
+    </footer>
+	`);
+};
+
 const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
 console.log($tweet); // to see what it looks like
-$('.tweets').append($tweet);
+$('.tweet').append($tweet);

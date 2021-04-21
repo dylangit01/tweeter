@@ -42,7 +42,7 @@ article > header {
   color: #c9cee3;
 }
 
-.fa-smile-beam {
+.tweet img {
   margin-right: 1rem;
 }
 
@@ -52,7 +52,7 @@ article > header {
 }
 
 .tweet footer {
-  width: 94%;
+  width: 93%;
   height: 25%;
   display: flex;
   justify-content: space-between;
