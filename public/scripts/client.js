@@ -29,28 +29,16 @@ const data = [
   },
 ];
 
-const tweetData = {
-  user: {
-    name: 'Newton',
-    avatars: 'https://i.imgur.com/73hZDYK.png',
-    handle: '@SirIsaac',
-  },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants',
-  },
-  created_at: 1461116232227,
-};
-
 const renderTweets = function (tweets) {
-	tweets.forEach(tweet => {
-		const $tweet = createTweetElement(tweet);
-		$('#tweets-container').append($tweet);
-	})
+  tweets.forEach((tweet) => {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet);
+  });
 };
 
 const createTweetElement = function (data) {
   const { user: { name, avatars, handle }, content: { text }, created_at, } = data;
-	return $(`
+  return $(`
 		<article class='tweet'>
 			<header>
 				<div class="faceName">
@@ -71,5 +59,15 @@ const createTweetElement = function (data) {
 	`);
 };
 
-renderTweets(data);
+$('document').ready(function () {
+  renderTweets(data);
+
+  const formSub = $('[action]')[0];
+  console.log(formSub);
+  $(formSub).submit((event) => {
+    console.log('Handler for .submit() called.');
+    event.preventDefault();
+  });
+});
+
 

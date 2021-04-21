@@ -1,5 +1,5 @@
-timeago.render(document.querySelectorAll('.timePassed'));
-
-
+$('document').ready(function() {
+	timeago.render(document.querySelectorAll('.timePassed'));
+})
 
 
