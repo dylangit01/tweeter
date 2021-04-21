@@ -8,6 +8,10 @@ article.tweet {
   font-family: 'Open Sans', sans-serif;
 }
 
+article.tweet:hover {
+	box-shadow: 5px 5px 0 2px #b8b5ff;
+}
+
 article > header {
   width: 98%;
   height: 75%;
@@ -65,6 +69,7 @@ article > footer span:nth-child(2) {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 15px;
+	color:#31326f;
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
