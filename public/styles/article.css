@@ -9,7 +9,7 @@
 }
 
 article.tweet:hover {
-	box-shadow: 5px 5px 0 2px #b8b5ff;
+  box-shadow: 5px 5px 0 2px #b8b5ff;
 }
 
 article > header {
@@ -19,40 +19,39 @@ article > header {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  top: 0px;
   background-color: #f4f1ec;
   background-image: none;
   border-bottom: 3px solid;
 }
 
-article>header div {
+.faceName {
   width: 96%;
   display: flex;
   justify-content: space-between;
-	align-items: center;
-	margin: 1rem auto 0;
+  align-items: center;
+  margin: 1rem auto 0;
 }
 
-article>header div span:nth-child(1){
-	display: flex;
-	align-items: center;
-	font-family: 'Encode Sans Semi Expanded', sans-serif;
+.faceName span:nth-child(1) {
+  display: flex;
+  align-items: center;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
-article>header div span:nth-child(2) {
-	color: #C9CEE3;
+.faceName span:nth-child(2) {
+  color: #c9cee3;
 }
 
 .fa-smile-beam {
-	margin-right: 1rem;
+  margin-right: 1rem;
 }
 
-article > header p {
+.tweet p {
   margin-bottom: 0.8rem;
   margin-left: 1.3rem;
 }
 
-article > footer {
+.tweet footer {
   width: 94%;
   height: 25%;
   display: flex;
@@ -60,19 +59,18 @@ article > footer {
   padding: 0.5rem 0;
 }
 
-article > footer span:nth-child(1) {
+.timePassed {
   font-size: 15px;
   padding-top: 5px;
 }
 
-article > footer span:nth-child(2) {
+.timePassed+span {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 15px;
-	color:#31326f;
+  color: #31326f;
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-color: #ef4f4f;
+  color: #ef4f4f;
 }
-

@@ -4,24 +4,24 @@
 	margin: auto;
 }
 
-h2 {
+.new-tweet h2 {
   text-align: center;
 	margin-bottom: .5rem;
 }
 
-form {
+.new-tweet form {
   display: flex;
   flex-direction: column;
 }
 
-form > label {
+.new-tweet label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 	font-size: 20px;
 	padding-bottom: .3rem;
 }
 
-textarea {
+.new-tweet textarea {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -34,14 +34,14 @@ textarea {
   height: 2rem;
 }
 
-form>div {
+.subBtn {
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 	font-family: 'Bungee', cursive;
 }
 
-div>button {
+.subBtn button {
 	color: #fff;
 	background: #4056a1;
 	border: none;
@@ -50,7 +50,7 @@ div>button {
 	font-size:20px;
 }
 
-div>button:hover {
+.subBtn button:hover {
 	cursor: pointer;
 	font-size: 25px;
 }
