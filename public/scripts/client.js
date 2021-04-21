@@ -36,17 +36,21 @@ $('document').ready(function() {
 	`);
   };
 
-  // renderTweets(data);
+  const loadTweets = () => {
+    $.ajax({ url: '/tweets' }).then((data) => {
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
 
   // Below fn cannot use "this", otherwise use tradition function syntax.
   $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
     event.preventDefault();
-    console.log(event.target, event.target.value);
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text()
-    console.log($('form output').text());
-
+    // console.log($('form output').text());
     if (tweetInput === '' || tweetInput === null) {
       alert('Tweet content cannot be empty, please try again')
       return;
@@ -64,13 +68,7 @@ $('document').ready(function() {
     });
   });
 
-  const loadTweets = () => {
-    $.ajax({ url:'/tweets' }).then(data => {
-      renderTweets(data)
-    })
-  }
 
-  loadTweets()
 
 
 

@@ -49,6 +49,7 @@ article > header {
 .tweet p {
   margin-bottom: 0.8rem;
   margin-left: 1.3rem;
+  word-break: break-all;
 }
 
 .tweet footer {
