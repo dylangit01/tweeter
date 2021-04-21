@@ -42,18 +42,30 @@ $('document').ready(function() {
   $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
     event.preventDefault();
+    console.log(event.target, event.target.value);
+    const tweetInput = $('#tweet-text').val();
+    const maxInputChar = $('form output').text()
+    console.log($('form output').text());
+
+    if (tweetInput === '' || tweetInput === null) {
+      alert('Tweet content cannot be empty, please try again')
+      return;
+    } else if (maxInputChar < 0) {
+      alert('Tweet content should be less then 140 characters');
+      return;
+    }
     console.log($(event.target).serialize());
     $.ajax({
       type: 'POST',
       url: '/tweets',
       data: $(event.target).serialize(),
     }).then(() => {
-      console.log('Successfully loaded');
+      // console.log('Successfully loaded');
     });
   });
 
   const loadTweets = () => {
-    $.ajax({ url: '/tweets' }).then(data => {
+    $.ajax({ url:'/tweets' }).then(data => {
       renderTweets(data)
     })
   }
