@@ -20,7 +20,7 @@ nav > span {
   color: aqua;
 }
 
-.newArrow {
+nav > div {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -28,14 +28,14 @@ nav > span {
   margin-right: 1.5em;
 }
 
-.downAngle {
+.fa-angle-double-down {
   color: #ee3c20;
 }
 
-.newTwtF {
+.sideTitle strong {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.thinF {
+.sideTitle span {
   font-family: 'Encode Sans Semi Expanded', sans-serif;
 }

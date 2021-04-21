@@ -1,4 +1,4 @@
-article.tweet {
+.tweet {
   display: flex;
   align-items: center;
   flex-direction: column;
