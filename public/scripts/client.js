@@ -48,6 +48,21 @@ $('document').ready(function () {
 
   loadTweets();
 
+    const postTweet = (event) => {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: $(event.target).serialize(),
+      }).then(() => {
+        console.log('Successfully loaded');
+        location.reload();
+        // $('#tweet-text').val('')
+        // $('form output').text('140')
+        // $('#tweets-container').empty()
+        // loadTweets()
+      });
+    };
+
   // Fn using "this" has to use tradition function syntax:
   $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
@@ -59,31 +74,20 @@ $('document').ready(function () {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
       });
-      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800));
+      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp());
       return;
-    }
-    if (maxInputChar < 0) {
+    } else if (maxInputChar < 0) {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content should be less then 140 characters ⚠️');
       });
-      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800));
+      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp());
       return;
     }
-
     // console.log($(event.target).serialize());
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: $(event.target).serialize(),
-    }).then(() => {
-      console.log('Successfully loaded');
-      location.reload();
-      // $('#tweet-text').val('')
-      // $('form output').text('140')
-      // $('#tweets-container').empty()
-      // loadTweets()
-    });
+    postTweet(event)
   });
+
+
 
   // why this not working?
   // const makeErrBoxEl = function() {
