@@ -25,3 +25,7 @@ This repository is the starter code for the project: Students will fork and clon
 5. Animated indication for writing a new tweet.
 6. Right corner button scrolls up to page top.
 7. Error msg shows up if user inputs empty field or excess 140 character, and goes away when focusing in the input area. 
+
+## Screenshots
+!["screenshot of tweet compose box"](https://github.com/dylangit01/tweeter/blob/master/docs/tweet-box.png)
+!["screenshot of tweets"](https://github.com/dylangit01/tweeter/blob/master/docs/tweeters.png)
