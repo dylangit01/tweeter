@@ -97,6 +97,8 @@ $('document').ready(function() {
       $(newTweet).toggle();
     });
 
+    $(angleDown).click(() => $(newTweet).toggle());
+
     setInterval(() => {
       $(angleDown).slideDown(300);
       $(angleDown).slideUp(300);
