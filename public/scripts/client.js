@@ -104,4 +104,8 @@ $('document').ready(function() {
   };
 
   toggleComposeNewTweet();
+
+  // Scroll up to top:
+  $('.fa-chevron-circle-up').click(() => window.scrollTo(0, 0));
+
 });

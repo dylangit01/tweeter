@@ -55,3 +55,14 @@ body {
   color: #ff0000;
   font-size: 20px;
 }
+
+.fa-chevron-circle-up {
+  position:fixed;
+  right: 1rem;
+  bottom: 2rem;
+  color: #ff0025
+}
+
+.fa-chevron-circle-up:hover{
+  cursor: pointer;
+}
