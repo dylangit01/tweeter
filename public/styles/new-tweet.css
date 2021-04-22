@@ -1,8 +1,8 @@
 .new-tweet {
   width: 98%;
-	height: 180px;
-	margin: 2rem auto 0;
-	position: relative;
+  height: 180px;
+  margin: 2rem auto 0;
+  position: relative;
 }
 
 .new-tweet form {
@@ -13,8 +13,8 @@
 .new-tweet label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-	font-size: 20px;
-	padding-bottom: .3rem;
+  font-size: 20px;
+  padding-bottom: 0.3rem;
 }
 
 #tweet-text {
@@ -31,24 +31,23 @@
 }
 
 .subBtn {
-	display: flex;
-	justify-content: space-between;
-	font-family: 'Bungee', cursive;
-	width:98%;
-	margin: 1rem auto 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  width: 98%;
+  margin: 1rem auto 1rem;
 }
 
 .subBtn button {
-	color: #fff;
-	background: #4056a1;
-	border: none;
-	padding: 5px 15px;
-	border-radius: 3px;
-	font-size:20px;
+  color: #fff;
+  background: #4056a1;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 20px;
 }
 
 .subBtn button:hover {
-	cursor: pointer;
-	font-size: 25px;
+  cursor: pointer;
+  font-size: 25px;
 }
-

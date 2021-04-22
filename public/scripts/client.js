@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$('document').ready(function () {
+$('document').ready(function() {
+  
+  // Loop tweets array and create HTML template for each tweet:
   const renderTweets = function (tweets) {
     tweets.reverse().forEach((tweet) => {
       const $tweet = createTweetElement(tweet);
@@ -48,6 +50,7 @@ $('document').ready(function () {
 
   loadTweets();
 
+  // Post tweet fn:
   const postTweet = (event) => {
     $.ajax({
       type: 'POST',
@@ -83,6 +86,7 @@ $('document').ready(function () {
     postTweet(event);
   });
 
+  // For toggling compose new tweet fn:
   const toggleComposeNewTweet = () => {
     const angleDown = $('.fa-angle-double-down');
     const newTweet = $('.new-tweet');

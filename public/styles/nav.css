@@ -36,11 +36,11 @@ nav > div {
   cursor: pointer;
 }
 
-.sideTitle{
-  color:#fff;
+.sideTitle {
+  color: #fff;
   position: absolute;
-  right:0;
-  margin: 0 3rem .5rem 0;
+  right: 0;
+  margin: 0 3rem 0.5rem 0;
   font-size: 20px;
 }
 
@@ -57,5 +57,5 @@ nav > div {
 }
 
 .hiddenOne {
-visibility: hidden;
+  visibility: hidden;
 }

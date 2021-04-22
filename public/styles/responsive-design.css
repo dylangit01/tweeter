@@ -65,34 +65,33 @@
     font-size: 15px;
   }
 
-#tweets-container {
-  margin-top: 1.5rem;
-}
+  #tweets-container {
+    margin-top: 1.5rem;
+  }
 
-.tweet {
-  height: 400px;
-}
+  .tweet {
+    height: 400px;
+  }
 
-.faceName {
-	flex-direction: column;
-}
+  .faceName {
+    flex-direction: column;
+  }
 
-.tweet img {
-  margin-right: .5rem;
-}
+  .tweet img {
+    margin-right: 0.5rem;
+  }
 
-.tweet p {
-  margin: 0 .5rem;
-}
+  .tweet p {
+    margin: 0 0.5rem;
+  }
 
-.tweet footer {
-	flex-direction: column;
-	align-items: center;
-  justify-content: space-around;
-}
+  .tweet footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 
-.timePassed {
-  font-size: 20px;
-}
-
+  .timePassed {
+    font-size: 20px;
+  }
 }

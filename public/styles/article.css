@@ -70,13 +70,15 @@ article > header {
   padding-top: 5px;
 }
 
-.timePassed+span {
+.timePassed + span {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 15px;
   color: #31326f;
 }
 
-.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
   color: #ef4f4f;
 }
