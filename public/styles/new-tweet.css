@@ -1,12 +1,8 @@
 .new-tweet {
   width: 98%;
-	height: 270px;
-	margin: auto;
-}
-
-.new-tweet h2 {
-  text-align: center;
-	margin-bottom: .5rem;
+	height: 200px;
+	margin: 2rem auto 0;
+	position: relative;
 }
 
 .new-tweet form {
@@ -21,7 +17,7 @@
 	padding-bottom: .3rem;
 }
 
-.new-tweet textarea {
+#tweet-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -35,10 +31,11 @@
 }
 
 .subBtn {
-	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 	font-family: 'Bungee', cursive;
+	width:98%;
+	margin: 1rem auto 1rem;
 }
 
 .subBtn button {

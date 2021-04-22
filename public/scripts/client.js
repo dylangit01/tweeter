@@ -53,10 +53,13 @@ $('document').ready(function() {
   $('.new-tweet form').submit((event) => {
     console.log('Handler for .submit() called.');
     event.preventDefault();
-    let tweetInput = $('#tweet-text').val();
-    let maxInputChar = $('form output').text()
+    const tweetInput = $('#tweet-text').val();
+    const maxInputChar = $('form output').text()
+    const errMsgBox = $('.new-tweet h2')
+    console.log(errMsgBox);
     if (tweetInput === '' || tweetInput === null) {
       alert('Tweet content cannot be empty, please try again')
+      
       return;
     } else if (maxInputChar < 0) {
       alert('Tweet content should be less then 140 characters');
@@ -69,7 +72,7 @@ $('document').ready(function() {
       data: $(event.target).serialize(),
     }).then(() => {
       // console.log('Successfully loaded');
-      location.reload();
+      // location.reload();
       // $('#tweet-text').val('')
       // $('form output').text('140')
       // $('#tweets-container').empty()
