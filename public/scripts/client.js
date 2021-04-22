@@ -55,10 +55,16 @@ $('document').ready(function() {
     event.preventDefault();
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text()
-    const errMsgBox = $('.new-tweet h2')
+    const errMsgBox = $('.container h2');
     console.log(errMsgBox);
     if (tweetInput === '' || tweetInput === null) {
-      alert('Tweet content cannot be empty, please try again')
+      // alert('Tweet content cannot be empty, please try again')
+      $(errMsgBox).slideDown('slow', () => {
+        $(errMsgBox).text('🚫 Tweet content cannot be empty, please try again 🚫');
+        setTimeout(() => {
+          $(errMsgBox).slideUp('slow');
+        }, 2000)
+      })
       
       return;
     } else if (maxInputChar < 0) {
