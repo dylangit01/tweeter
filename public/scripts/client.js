@@ -16,7 +16,7 @@ $('document').ready(function() {
   const createTweetElement = function (data) {
     const { user: { name, avatars, handle }, content: { text }, created_at, } = data;
     const safeHtml = $('<div>').text(`${text}`).text()
-    console.log(safeHtml);
+    // console.log(safeHtml);
     return $(`
 		<article class='tweet'>
 			<header>
@@ -70,7 +70,7 @@ $('document').ready(function() {
       // $('#tweet-text').val('')
       // $('form output').text('140')
       location.reload();
-      $('#tweets-container').empty()
+      // $('#tweets-container').empty()
       // loadTweets()
     });
   });
