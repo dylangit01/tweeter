@@ -1,8 +1,9 @@
 .new-tweet {
   width: 98%;
-	height: 200px;
+	height: 180px;
 	margin: 2rem auto 0;
 	position: relative;
+	/* display: none; */
 }
 
 .new-tweet form {

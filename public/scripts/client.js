@@ -48,20 +48,20 @@ $('document').ready(function () {
 
   loadTweets();
 
-    const postTweet = (event) => {
-      $.ajax({
-        type: 'POST',
-        url: '/tweets',
-        data: $(event.target).serialize(),
-      }).then(() => {
-        console.log('Successfully loaded');
-        location.reload();
-        // $('#tweet-text').val('')
-        // $('form output').text('140')
-        // $('#tweets-container').empty()
-        // loadTweets()
-      });
-    };
+  const postTweet = (event) => {
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(event.target).serialize(),
+    }).then(() => {
+      console.log('Successfully loaded');
+      location.reload();
+      // $('#tweet-text').val('')
+      // $('form output').text('140')
+      // $('#tweets-container').empty()
+      // loadTweets()
+    });
+  };
 
   // Fn using "this" has to use tradition function syntax:
   $('.new-tweet form').submit((event) => {
@@ -70,7 +70,7 @@ $('document').ready(function () {
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text();
     const errMsgBox = $('.container h2');
-    if (tweetInput === '' || tweetInput === null) {
+    if (tweetInput === '') {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
       });
@@ -84,18 +84,21 @@ $('document').ready(function () {
       return;
     }
     // console.log($(event.target).serialize());
-    postTweet(event)
+    postTweet(event);
   });
 
-
+  // const angleDown = $('.fa-angle-double-down');
+  // const newTweet = $('#new-tweet');
 
   // why this not working?
   // const makeErrBoxEl = function() {
-  //   return $(`
+  //   const $errBoxEl =  $(`
   //     <h2><i class="fas fa-exclamation-triangle"></i>Tweet content cannot be empty, please try again<i class="fas fa-exclamation-triangle"></i></h2>
   //   `);
+  //     $('.container').append($errBoxEl)
+  //     $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
   // }
+
   // const $errBoxEl = makeErrBoxEl()
-  // $('.container').append($errBoxEl)
-  // $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
+ 
 });
