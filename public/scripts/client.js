@@ -15,6 +15,8 @@ $('document').ready(function() {
 
   const createTweetElement = function (data) {
     const { user: { name, avatars, handle }, content: { text }, created_at, } = data;
+    const safeHtml = $('<div>').text(`${text}`).text()
+    console.log(safeHtml);
     return $(`
 		<article class='tweet'>
 			<header>
@@ -22,7 +24,7 @@ $('document').ready(function() {
 					<span><img src="${avatars}" alt="userAvatar"/></i>${name}</span>
 					<span>${handle}</span>
 				</div>
-				<p>${text}</p>
+				<p>${safeHtml}</p>
 			</header>
 			<footer>
 				<span class="timePassed">${timeago.format(new Date(created_at))}</span>
@@ -65,9 +67,11 @@ $('document').ready(function() {
       data: $(event.target).serialize(),
     }).then(() => {
       // console.log('Successfully loaded');
+      // $('#tweet-text').val('')
+      // $('form output').text('140')
       location.reload();
       $('#tweets-container').empty()
-      loadTweets()
+      // loadTweets()
     });
   });
 
