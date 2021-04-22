@@ -70,6 +70,7 @@ $('document').ready(function () {
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text();
     const errMsgBox = $('.container h2');
+    
     if (tweetInput === '') {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
