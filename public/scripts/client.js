@@ -4,8 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$('document').ready(function() {
-  
+$('document').ready(function () {
   const renderTweets = function (tweets) {
     tweets.reverse().forEach((tweet) => {
       const $tweet = createTweetElement(tweet);
@@ -54,24 +53,23 @@ $('document').ready(function() {
     console.log('Handler for .submit() called.');
     event.preventDefault();
     const tweetInput = $('#tweet-text').val();
-    const maxInputChar = $('form output').text()
+    const maxInputChar = $('form output').text();
     const errMsgBox = $('.container h2');
-    // console.log(errMsgBox);
     if (tweetInput === '' || tweetInput === null) {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
       });
-      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800))
-      return;
-    } 
-    if (maxInputChar < 0) {
-        $(errMsgBox).slideDown('slow', () => {
-          $(errMsgBox).text('⚠️ Tweet content should be less then 140 characters ⚠️');
-        });
       $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800));
-        return;
+      return;
     }
-    
+    if (maxInputChar < 0) {
+      $(errMsgBox).slideDown('slow', () => {
+        $(errMsgBox).text('⚠️ Tweet content should be less then 140 characters ⚠️');
+      });
+      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800));
+      return;
+    }
+
     // console.log($(event.target).serialize());
     $.ajax({
       type: 'POST',
@@ -87,7 +85,6 @@ $('document').ready(function() {
     });
   });
 
-
   // why this not working?
   // const makeErrBoxEl = function() {
   //   return $(`
@@ -96,7 +93,5 @@ $('document').ready(function() {
   // }
   // const $errBoxEl = makeErrBoxEl()
   // $('.container').append($errBoxEl)
-// $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
-
-  
+  // $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
 });
