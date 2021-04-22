@@ -56,10 +56,6 @@ $('document').ready(function () {
     }).then(() => {
       console.log('Successfully loaded');
       location.reload();
-      // $('#tweet-text').val('')
-      // $('form output').text('140')
-      // $('#tweets-container').empty()
-      // loadTweets()
     });
   };
 
@@ -70,8 +66,8 @@ $('document').ready(function () {
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text();
     const errMsgBox = $('.container h2');
-    
-    if (tweetInput === '') {
+    const trimmedInput = tweetInput.trim();
+    if (tweetInput === '' || trimmedInput.length === 0) {
       $(errMsgBox).slideDown('slow', () => {
         $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
       });
@@ -84,22 +80,29 @@ $('document').ready(function () {
       $('#tweet-text').on('focus', () => $(errMsgBox).slideUp());
       return;
     }
-    // console.log($(event.target).serialize());
     postTweet(event);
   });
 
-  // const angleDown = $('.fa-angle-double-down');
-  // const newTweet = $('#new-tweet');
+  const toggleComposeNewTweet = () => {
+    const angleDown = $('.fa-angle-double-down');
+    const newTweet = $('.new-tweet');
+    const sideTitle = $('.sideTitle');
 
-  // why this not working?
-  // const makeErrBoxEl = function() {
-  //   const $errBoxEl =  $(`
-  //     <h2><i class="fas fa-exclamation-triangle"></i>Tweet content cannot be empty, please try again<i class="fas fa-exclamation-triangle"></i></h2>
-  //   `);
-  //     $('.container').append($errBoxEl)
-  //     $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
-  // }
+    // setInterval(()=> $(angleDown).slideDown(), 1000)
 
-  // const $errBoxEl = makeErrBoxEl()
- 
+    $(sideTitle).click(() => {
+      $(newTweet).animate({ down: '10px' });
+      // $(newTweet).toggle(()=> $(newTweet).animate({down: '10px'}));
+      $(newTweet).toggle()
+    });
+
+
+    setInterval(() => {
+      $(angleDown).slideDown(300);
+      $(angleDown).slideUp(300);
+      // setTimeout(() => $(angleDown).slideDown(), 200);
+    }, 500);
+  };
+
+  toggleComposeNewTweet();
 });

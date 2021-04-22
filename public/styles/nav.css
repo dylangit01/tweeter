@@ -25,11 +25,27 @@ nav > div {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-right: 1.5em;
+  margin-right: 6.5rem;
 }
 
 .fa-angle-double-down {
   color: #ee3c20;
+}
+
+.fa-angle-double-down:hover {
+  cursor: pointer;
+}
+
+.sideTitle{
+  color:#fff;
+  position: absolute;
+  right:0;
+  margin: 0 3rem .5rem 0;
+  font-size: 20px;
+}
+
+.sideTitle:hover {
+  cursor: pointer;
 }
 
 .sideTitle strong {
@@ -38,4 +54,8 @@ nav > div {
 
 .sideTitle span {
   font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+.hiddenOne {
+visibility: hidden;
 }
