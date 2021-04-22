@@ -15,3 +15,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Features
+
+1. Ability to submit tweets and view them in real time.
+2. Ability to see how long ago tweet was posted.
+3. Implemented 140 character limit and dynamic counter to keep track of number of characters remaining.
+4. Responsive display to cater to multiple device sizes.
+5. Animated indication for writing a new tweet.
+6. Right corner button scrolls up to page top.
+7. Error msg shows up if user inputs empty field or excess 140 character, and goes away when focusing in the input area. 
