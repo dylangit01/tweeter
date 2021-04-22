@@ -88,19 +88,14 @@ $('document').ready(function () {
     const newTweet = $('.new-tweet');
     const sideTitle = $('.sideTitle');
 
-    // setInterval(()=> $(angleDown).slideDown(), 1000)
-
     $(sideTitle).click(() => {
       $(newTweet).animate({ down: '10px' });
-      // $(newTweet).toggle(()=> $(newTweet).animate({down: '10px'}));
-      $(newTweet).toggle()
+      $(newTweet).toggle();
     });
-
 
     setInterval(() => {
       $(angleDown).slideDown(300);
       $(angleDown).slideUp(300);
-      // setTimeout(() => $(angleDown).slideDown(), 200);
     }, 500);
   };
 
