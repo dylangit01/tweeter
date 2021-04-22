@@ -1,0 +1,30 @@
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    /* justify-content: space-between */
+  }
+
+  .mainHeader {
+		width: 25vw;
+		height: 40vh;
+		top: 8rem;
+		left: 2rem;
+		right:2rem;
+		position: fixed;
+  }
+	.mainHeader img {
+		width: 200px;
+		height: 200px;
+	}
+  .container {
+    max-width: 60%;
+    margin-right: 2rem;
+    font-size: 1rem;
+  }
+
+
+
+
+
+
+}
