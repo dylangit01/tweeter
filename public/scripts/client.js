@@ -56,29 +56,30 @@ $('document').ready(function() {
     const tweetInput = $('#tweet-text').val();
     const maxInputChar = $('form output').text()
     const errMsgBox = $('.container h2');
-    console.log(errMsgBox);
+    // console.log(errMsgBox);
     if (tweetInput === '' || tweetInput === null) {
-      // alert('Tweet content cannot be empty, please try again')
       $(errMsgBox).slideDown('slow', () => {
-        $(errMsgBox).text('🚫 Tweet content cannot be empty, please try again 🚫');
-        setTimeout(() => {
-          $(errMsgBox).slideUp('slow');
-        }, 2000)
-      })
-      
+        $(errMsgBox).text('⚠️ Tweet content cannot be empty, please try again ⚠️');
+      });
+      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800))
       return;
-    } else if (maxInputChar < 0) {
-      alert('Tweet content should be less then 140 characters');
-      return;
+    } 
+    if (maxInputChar < 0) {
+        $(errMsgBox).slideDown('slow', () => {
+          $(errMsgBox).text('⚠️ Tweet content should be less then 140 characters ⚠️');
+        });
+      $('#tweet-text').on('focus', () => $(errMsgBox).slideUp(800));
+        return;
     }
+    
     // console.log($(event.target).serialize());
     $.ajax({
       type: 'POST',
       url: '/tweets',
       data: $(event.target).serialize(),
     }).then(() => {
-      // console.log('Successfully loaded');
-      // location.reload();
+      console.log('Successfully loaded');
+      location.reload();
       // $('#tweet-text').val('')
       // $('form output').text('140')
       // $('#tweets-container').empty()
@@ -87,9 +88,15 @@ $('document').ready(function() {
   });
 
 
-
-
-
+  // why this not working?
+  // const makeErrBoxEl = function() {
+  //   return $(`
+  //     <h2><i class="fas fa-exclamation-triangle"></i>Tweet content cannot be empty, please try again<i class="fas fa-exclamation-triangle"></i></h2>
+  //   `);
+  // }
+  // const $errBoxEl = makeErrBoxEl()
+  // $('.container').append($errBoxEl)
+// $('.new-tweet form').submit(() => $(errMsgBox).slideUp());
 
   
 });
