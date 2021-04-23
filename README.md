@@ -17,7 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Features
-
+0. When submit new Tweet, only this new tweet will be rendered to the page, which is not rendering all tweets; this is to help reducing outside http requests to the server.
 1. Ability to submit tweets and view them in real time.
 2. Ability to see how long ago tweet was posted.
 3. Implemented 140 character limit and dynamic counter to keep track of number of characters remaining.
