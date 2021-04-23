@@ -31,6 +31,7 @@ nav > div {
 
 .fa-angle-double-down {
   color: #ee3c20;
+  z-index: 20;
 }
 
 .fa-angle-double-down:hover {

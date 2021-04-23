@@ -4,14 +4,19 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$('document').ready(function() {
-  
+$('document').ready(function () {
   // Loop tweets array and create HTML template for each tweet:
   const renderTweets = function (tweets) {
     tweets.reverse().forEach((tweet) => {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
     });
+  };
+
+  // Only rendering the last tweet from loadTweet function:
+  const renderLastTweet = function (tweet) {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweet);
   };
 
   const createTweetElement = function (data) {
@@ -42,13 +47,19 @@ $('document').ready(function() {
 	`);
   };
 
-  const loadTweets = () => {
+  // ***Important: if condition is making sure that only the last tweet has been prepended to the main container when submitting, else rendering all
+  const loadTweets = (isNewTweet) => {
     $.ajax({ url: '/tweets' }).then((data) => {
-      renderTweets(data);
+      if (isNewTweet) {
+        renderLastTweet(data[data.length - 1]);
+      } else {
+        renderTweets(data);
+      }
     });
   };
 
-  loadTweets();
+  // Load the page at the very beginning.
+  loadTweets(false);
 
   // Post tweet fn:
   const postTweet = (event) => {
@@ -57,8 +68,9 @@ $('document').ready(function() {
       url: '/tweets',
       data: $(event.target).serialize(),
     }).then(() => {
-      console.log('Successfully loaded');
-      location.reload();
+      $('#tweet-text').val('');
+      $('form output').text('140');
+      loadTweets(true);
     });
   };
 
@@ -83,6 +95,7 @@ $('document').ready(function() {
       $('#tweet-text').on('focus', () => $(errMsgBox).slideUp());
       return;
     }
+    // When submit the tweet, ajax will make post call to server:
     postTweet(event);
   });
 
@@ -95,19 +108,22 @@ $('document').ready(function() {
     $(sideTitle).click(() => {
       $(newTweet).animate({ down: '10px' });
       $(newTweet).toggle();
+      $('#tweet-text').focus();
     });
 
-    $(angleDown).click(() => $(newTweet).toggle());
+    $(angleDown).click(() => {
+      $(newTweet).toggle();
+      $('#tweet-text').focus();
+    });
 
     setInterval(() => {
-      $(angleDown).slideDown(300);
-      $(angleDown).slideUp(300);
-    }, 500);
+      $(angleDown).animate({ height: '40px' }, 300);
+      $(angleDown).animate({ height: '20px' }, 300);
+    }, 300);
   };
 
   toggleComposeNewTweet();
 
   // Scroll up to top:
   $('.fa-chevron-circle-up').click(() => window.scrollTo(0, 0));
-
 });
