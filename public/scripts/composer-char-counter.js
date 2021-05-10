@@ -4,7 +4,7 @@ $(document).ready(function() {
   const charCounter = function () {
     const $testEl = $(this).closest('form');    //closest is used to find the parent element of this event
     const $formEl = $(this).parent();
-    console.log($formEl);
+    // console.log($formEl);
 
     // const $outputEl = $(this).next().find('output');
     const $outputEl = $(this).parent().find('output')
